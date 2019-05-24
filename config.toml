@@ -1,0 +1,4 @@
+backend = "kubernetes"
+kubeconfig="/opt/kubeconfig"
+log-level = "info"
+interval = 2

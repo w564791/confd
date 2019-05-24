@@ -1,6 +1,6 @@
 #### template
 ```
-s# cat /etc/confd/templates/myconfig.conf.tmpl
+# cat /etc/confd/templates/myconfig.conf.tmpl
 
 {{range $key := ls "/istio-system"}}
 {{$subkey :=printf "/istio-system/%s" $key}}

@@ -1,0 +1,38 @@
+{{range $key := ls "/istio-system"}}
+{{$subkey :=printf "/istio-system/%s" $key}}
+ {{$dir := dir $subkey}}
+upstream  {{base $dir }}-{{base  $subkey}} {
+{{$data := json (getv $subkey)}}
+    {{range $data.subsets}}
+        {{$address :=  .addresses}}
+        {{$port:= .ports}}
+            {{range $address}}
+                {{$ip:=.ip}}
+                {{range $port}}
+                   {{if or (eq "http" .name) (eq "http2" .name)}}
+                      server {{$ip}}:{{.port}};
+                   {{end}}
+                {{end}}
+            {{end}}
+    {{end}}
+
+}
+
+
+
+server {
+    listen 80;
+    server_name {{base  $subkey}}.example.com;
+    access_log /var/log/nginx/{{base  $subkey}}.access.log;
+    error_log /var/log/nginx/{{base  $subkey}}.error.log;
+
+    location / {
+        index             index.html index.htm;
+        proxy_pass        http://{{base $dir}}-{{base $subkey}};
+        proxy_redirect    off;
+        proxy_set_header  Host             $host;
+        proxy_set_header  X-Real-IP        $remote_addr;
+        proxy_set_header  X-Forwarded-For  $proxy_add_x_forwarded_for;
+    }
+}
+{{end}}

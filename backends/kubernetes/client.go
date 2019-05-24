@@ -1,15 +1,10 @@
 package k8kubernetes
 
 import (
-		"k8s.io/client-go/kubernetes"
+	"k8s.io/client-go/kubernetes"
     "k8s.io/client-go/tools/clientcmd"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	//"k8s.io/api/core/v1"
-	//"net/http"
-		"log"
-	//	"k8s.io/client-go/rest"
-	//"strings"
-	//"path"
+	"log"
 	"encoding/json"
 	"fmt"
 	"strings"
@@ -36,8 +31,7 @@ func (c *KubernetesClient) GetValues(endpoints []string) (map[string]string, err
 	for _, key := range endpoints {
 		newKey:=strings.Split(key,"/")
 		namespace:=newKey[1]
-		//log.Println("======================",newKey[1],newKey[2])
-		//log.Println(newKey[1])
+
 		endpoint,err :=c.client.CoreV1().Endpoints(namespace).Get(newKey[2],metav1.GetOptions{})
 		if err != nil {
 			log.Println(err)
