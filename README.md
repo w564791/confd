@@ -42,3 +42,7 @@ Before we begin be sure to [download and install confd](docs/installation.md).
 ## Next steps
 
 Check out the [docs directory](docs) for more docs.
+
+## Kubernetes backend support
+
+* [Document](docs/kubernetes-backend.md)

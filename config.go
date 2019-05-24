@@ -33,6 +33,7 @@ type Config struct {
 	PrintVersion  bool
 	ConfigFile    string
 	OneTime       bool
+
 }
 
 var config Config
@@ -158,6 +159,11 @@ func initConfig() error {
 			config.BackendNodes = []string{"http://127.0.0.1:8200"}
 		case "zookeeper":
 			config.BackendNodes = []string{"127.0.0.1:2181"}
+		case "kubernetes":
+			if len(config.Kubeconfig) == 0{
+				config.BackendNodes = []string{"https://kubernetes.default"}
+			}
+
 		}
 	}
 	// Initialize the storage client
