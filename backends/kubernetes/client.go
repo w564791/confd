@@ -8,14 +8,18 @@ import (
 	"encoding/json"
 	"fmt"
 	"strings"
+	"k8s.io/client-go/rest"
 )
 type KubernetesClient struct {
 	client  kubernetes.Clientset
 }
 
 
-func New(kubeconfig string)(*KubernetesClient,error) {
-
+func New(kubeconfig string,InCluster bool)(*KubernetesClient,error) {
+	var config *rest.Config
+	if InCluster{
+		config, _ = rest.InClusterConfig()
+	}
 	config, err := clientcmd.BuildConfigFromFlags("", kubeconfig)
 	if err != nil {
 		panic(err.Error())

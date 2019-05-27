@@ -162,6 +162,7 @@ func initConfig() error {
 		case "kubernetes":
 			if len(config.Kubeconfig) == 0{
 				config.BackendNodes = []string{"https://kubernetes.default"}
+				config.InCluster = true
 			}
 
 		}

@@ -62,7 +62,7 @@ func New(config Config) (StoreClient, error) {
 	case "redis":
 		return redis.NewRedisClient(backendNodes, config.ClientKey, config.Separator)
 	case "kubernetes":
-		return k8kubernetes.New(config.Kubeconfig)
+		return k8kubernetes.New(config.Kubeconfig,config.InCluster)
 	case "env":
 		return env.NewEnvClient()
 	case "file":

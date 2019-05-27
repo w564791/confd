@@ -28,4 +28,5 @@ type Config struct {
 	Path         string     `toml:"path"`
 	Role         string
 	Kubeconfig string `toml:"kubeconfig"`
+	InCluster bool
 }
