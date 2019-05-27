@@ -23,11 +23,13 @@ func New(kubeconfig string,InCluster bool)(*KubernetesClient,error) {
 		if err != nil {
 			log.Info(err.Error())
 		}
+		log.Info("Use InCluster config")
 	}else{
 		config, err = clientcmd.BuildConfigFromFlags("", kubeconfig)
 		if err != nil {
 			panic(err.Error())
 		}
+		log.Info("Use OutOfCluster config")
 	}
 
 	clientset, err := kubernetes.NewForConfig(config)

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="08b75b5c-96b1-4492-8014-c9a690291318" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/backends/kubernetes/client.go" beforeDir="false" afterPath="$PROJECT_DIR$/backends/kubernetes/client.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/confd" beforeDir="false" afterPath="$PROJECT_DIR$/confd" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,12 +70,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="go" value="133" />
+          <entry key="go" value="173" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Go" value="133" />
+          <entry key="Go" value="173" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -107,7 +108,7 @@
         <entry file="file://$PROJECT_DIR$/confd.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="264">
-              <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="42" />
+              <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -115,8 +116,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backends/kubernetes/client.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="19" selection-start-line="19" selection-end-line="19" selection-end-column="17" />
+            <state relative-caret-position="384">
+              <caret line="31" column="27" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
               <folding>
                 <element signature="e#22#249#0" expanded="true" />
               </folding>
@@ -256,42 +257,7 @@
             <path>
               <item name="confd" type="b2602c69:ProjectViewProjectNode" />
               <item name="confd" type="462c0819:PsiDirectoryNode" />
-              <item name="backends" type="462c0819:PsiDirectoryNode" />
-              <item name="kubernetes" type="462c0819:PsiDirectoryNode" />
-              <item name="client.go" type="e9541c9c:GoTreeStructureProvider$GoFileNode" />
-            </path>
-            <path>
-              <item name="confd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="confd" type="462c0819:PsiDirectoryNode" />
-              <item name="backends" type="462c0819:PsiDirectoryNode" />
-              <item name="client.go" type="e9541c9c:GoTreeStructureProvider$GoFileNode" />
-            </path>
-            <path>
-              <item name="confd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="confd" type="462c0819:PsiDirectoryNode" />
-              <item name="backends" type="462c0819:PsiDirectoryNode" />
-              <item name="config.go" type="e9541c9c:GoTreeStructureProvider$GoFileNode" />
-            </path>
-            <path>
-              <item name="confd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="confd" type="462c0819:PsiDirectoryNode" />
               <item name="log" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="confd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="confd" type="462c0819:PsiDirectoryNode" />
-              <item name="log" type="462c0819:PsiDirectoryNode" />
-              <item name="log.go" type="e9541c9c:GoTreeStructureProvider$GoFileNode" />
-            </path>
-            <path>
-              <item name="confd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="confd" type="462c0819:PsiDirectoryNode" />
-              <item name="confd.go" type="e9541c9c:GoTreeStructureProvider$GoFileNode" />
-            </path>
-            <path>
-              <item name="confd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="confd" type="462c0819:PsiDirectoryNode" />
-              <item name="config.go" type="e9541c9c:GoTreeStructureProvider$GoFileNode" />
             </path>
             <path>
               <item name="confd" type="b2602c69:ProjectViewProjectNode" />
@@ -546,7 +512,7 @@
     <entry file="file://$PROJECT_DIR$/confd.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
-          <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="42" />
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -566,8 +532,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backends/kubernetes/client.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="19" selection-start-line="19" selection-end-line="19" selection-end-column="17" />
+        <state relative-caret-position="384">
+          <caret line="31" column="27" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
           <folding>
             <element signature="e#22#249#0" expanded="true" />
           </folding>
