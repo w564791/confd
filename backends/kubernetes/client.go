@@ -4,11 +4,11 @@ import (
 	"k8s.io/client-go/kubernetes"
     "k8s.io/client-go/tools/clientcmd"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	"log"
 	"encoding/json"
 	"fmt"
 	"strings"
 	"k8s.io/client-go/rest"
+	"github.com/kelseyhightower/confd/log"
 )
 type KubernetesClient struct {
 	client  kubernetes.Clientset
@@ -17,13 +17,19 @@ type KubernetesClient struct {
 
 func New(kubeconfig string,InCluster bool)(*KubernetesClient,error) {
 	var config *rest.Config
+	var err error
 	if InCluster{
-		config, _ = rest.InClusterConfig()
+		config, err = rest.InClusterConfig()
+		if err != nil {
+			log.Info(err.Error())
+		}
+	}else{
+		config, err = clientcmd.BuildConfigFromFlags("", kubeconfig)
+		if err != nil {
+			panic(err.Error())
+		}
 	}
-	config, err := clientcmd.BuildConfigFromFlags("", kubeconfig)
-	if err != nil {
-		panic(err.Error())
-	}
+
 	clientset, err := kubernetes.NewForConfig(config)
 
 	return &KubernetesClient{*clientset},err
@@ -38,7 +44,7 @@ func (c *KubernetesClient) GetValues(endpoints []string) (map[string]string, err
 
 		endpoint,err :=c.client.CoreV1().Endpoints(namespace).Get(newKey[2],metav1.GetOptions{})
 		if err != nil {
-			log.Println(err)
+			log.Info(err.Error())
 			return vars,err
 		}
 		jsendpoint,_:=json.Marshal(endpoint)
