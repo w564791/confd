@@ -40,7 +40,7 @@ var config Config
 
 func init() {
 	flag.StringVar(&config.AuthToken, "auth-token", "", "Auth bearer token to use")
-	flag.StringVar(&config.Backend, "backend", "etcd", "backend to use")
+	flag.StringVar(&config.Backend, "backend", "kubernetes", "backend to use, Default kubernetes")
 	flag.BoolVar(&config.BasicAuth, "basic-auth", false, "Use Basic Auth to authenticate (only used with -backend=consul and -backend=etcd)")
 	flag.StringVar(&config.ClientCaKeys, "client-ca-keys", "", "client ca keys")
 	flag.StringVar(&config.ClientCert, "client-cert", "", "the client cert")
